@@ -12,7 +12,7 @@ interface TMDBResponse {
 }
 
 export const fetchMovies = async ({ query }: FetchMoviesParams): Promise<TMDBResponse> => {
-  const response = await axios.get(BASE_URL, {
+  const response = await axios.get<TMDBResponse>(BASE_URL, {
     params: {
       query,
     },
